@@ -1,0 +1,10 @@
+install guest additions on centOS
+
+sudo yum install linux-headers-generic build-essential dkms kernel-devel-$(uname -r) kernel-headers-$(uname -r)
+wget http://download.virtualbox.org/virtualbox/4.3.20/VBoxGuestAdditions_4.3.20.iso
+sudo mkdir /media/VBoxGuestAdditions
+sudo mount -o loop,ro VBoxGuestAdditions_4.3.20.iso /media/VBoxGuestAdditions
+sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
+rm VBoxGuestAdditions_4.3.20.iso
+sudo umount /media/VBoxGuestAdditions
+sudo rmdir /media/VBoxGuestAdditions
